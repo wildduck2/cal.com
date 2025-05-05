@@ -5,7 +5,7 @@ import PageWrapper from "@components/PageWrapperAppDir";
 
 import { NotFound } from "./notFoundClient";
 
-export const generateMetadata = async () => {
+export async function generateMetadata() {
   const metadata = await _generateMetadata(
     (t) => t("404_page_not_found"),
     (t) => t("404_page_not_found")
@@ -17,9 +17,9 @@ export const generateMetadata = async () => {
       follow: false,
     },
   };
-};
+}
 
-const ServerPage = async () => {
+export default async function ServerPage() {
   const h = await headers();
   const nonce = h.get("x-nonce") ?? undefined;
   const host = h.get("x-forwarded-host") ?? "";
@@ -29,5 +29,4 @@ const ServerPage = async () => {
       <NotFound host={host} />
     </PageWrapper>
   );
-};
-export default ServerPage;
+}
