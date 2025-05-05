@@ -2,6 +2,7 @@ import { dir } from "i18next";
 import { Inter } from "next/font/google";
 import localFont from "next/font/local";
 import { headers, cookies } from "next/headers";
+import { AppProvider } from "providers";
 import React from "react";
 
 import { getLocale } from "@calcom/features/auth/lib/getLocale";
@@ -12,9 +13,7 @@ import { NotificationSoundHandler } from "@calcom/web/components/notification-so
 import { buildLegacyRequest } from "@lib/buildLegacyCtx";
 
 import "../styles/globals.css";
-import { AppRouterI18nProvider } from "./AppRouterI18nProvider";
 import { SpeculationRules } from "./SpeculationRules";
-import { Providers } from "./providers";
 
 const interFont = Inter({ subsets: ["latin"], variable: "--font-inter", preload: true, display: "swap" });
 const calFont = localFont({
@@ -152,11 +151,10 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           ]}
         />
 
-        <Providers>
-          <AppRouterI18nProvider translations={translations} locale={locale} ns={ns}>
-            {children}
-          </AppRouterI18nProvider>
-        </Providers>
+        {/* NOTE: this provider contains all the providers for future providers please consider following the same way to add a new one */}
+        <AppProvider locale={locale} ns={ns} translations={translations}>
+          {children}
+        </AppProvider>
         {!isEmbed && <NotificationSoundHandler />}
         <NotificationSoundHandler />
       </body>

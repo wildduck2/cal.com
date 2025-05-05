@@ -19,9 +19,9 @@ generator zod {
   relationModel = "default"
 }
 
-generator enums {
-  provider = "ts-node --transpile-only ./enum-generator"
-}
+// generator enums {
+//   provider = "ts-node --transpile-only ./enum-generator"
+// }
 
 enum SchedulingType {
   ROUND_ROBIN @map("roundRobin")

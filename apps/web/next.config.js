@@ -271,7 +271,11 @@ const nextConfig = {
       })
     );
 
-    config.plugins.push(new webpack.DefinePlugin({ "process.env.BUILD_ID": JSON.stringify(buildId) }));
+    config.plugins.push(
+      new webpack.DefinePlugin({
+        "process.env.BUILD_ID": JSON.stringify(buildId),
+      })
+    );
 
     config.resolve.fallback = {
       ...config.resolve.fallback, // if you miss it, all the other options in fallback, specified
@@ -624,7 +628,7 @@ const nextConfig = {
             type: "query",
             key: "callbackUrl",
             // prettier-ignore
-            value: "^(?!https?:\/\/).*$",
+            value: "^(?!https?://).*$",
           },
         ],
         destination: "/404",
