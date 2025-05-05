@@ -1,5 +1,5 @@
-import { createRouterCaller } from "app/_trpc/context";
 import type { SearchParams } from "app/_types";
+import { createRouterCaller } from "providers/trpc/trpc.context";
 
 import { TeamsListing } from "@calcom/features/ee/teams/components/TeamsListing";
 import { CreationSource } from "@calcom/prisma/enums";

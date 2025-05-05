@@ -1,6 +1,6 @@
-import { createRouterCaller } from "app/_trpc/context";
 import type { PageProps } from "app/_types";
 import { _generateMetadata, getTranslate } from "app/_utils";
+import { createRouterCaller } from "providers/trpc/trpc.context";
 
 import { AvailabilitySliderTable } from "@calcom/features/timezone-buddy/components/AvailabilitySliderTable";
 import { OrganizationRepository } from "@calcom/lib/server/repository/organization";

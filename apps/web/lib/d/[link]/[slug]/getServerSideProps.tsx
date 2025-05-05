@@ -1,6 +1,6 @@
 import type { EmbedProps } from "app/WithEmbedSSR";
-import { createRouterCaller } from "app/_trpc/context";
 import type { GetServerSidePropsContext } from "next";
+import { createRouterCaller } from "providers/trpc/trpc.context";
 import { z } from "zod";
 
 import { getServerSession } from "@calcom/features/auth/lib/getServerSession";

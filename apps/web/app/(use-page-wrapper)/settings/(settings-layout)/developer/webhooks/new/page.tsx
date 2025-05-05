@@ -1,5 +1,5 @@
-import { createRouterCaller } from "app/_trpc/context";
 import { _generateMetadata } from "app/_utils";
+import { createRouterCaller } from "providers/trpc/trpc.context";
 
 import { NewWebhookView } from "@calcom/features/webhooks/pages/webhook-new-view";
 import { APP_NAME } from "@calcom/lib/constants";

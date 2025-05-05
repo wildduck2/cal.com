@@ -1,5 +1,5 @@
-import { createRouterCaller } from "app/_trpc/context";
 import type { GetServerSidePropsContext } from "next";
+import { createRouterCaller } from "providers/trpc/trpc.context";
 import { z } from "zod";
 
 import { getMultipleDurationValue } from "@calcom/features/bookings/lib/get-booking";

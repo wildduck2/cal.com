@@ -1,5 +1,5 @@
-import { createRouterCaller } from "app/_trpc/context";
 import { _generateMetadata } from "app/_utils";
+import { createRouterCaller } from "providers/trpc/trpc.context";
 
 import { APP_NAME } from "@calcom/lib/constants";
 import { apiKeysRouter } from "@calcom/trpc/server/routers/viewer/apiKeys/_router";

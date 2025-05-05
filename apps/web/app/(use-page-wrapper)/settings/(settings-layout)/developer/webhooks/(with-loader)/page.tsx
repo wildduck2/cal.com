@@ -1,7 +1,7 @@
-import { createRouterCaller } from "app/_trpc/context";
 import { _generateMetadata } from "app/_utils";
 import { cookies, headers } from "next/headers";
 import { redirect } from "next/navigation";
+import { createRouterCaller } from "providers/trpc/trpc.context";
 
 import { getServerSession } from "@calcom/features/auth/lib/getServerSession";
 import WebhooksView from "@calcom/features/webhooks/pages/webhooks-view";
